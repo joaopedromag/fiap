@@ -1,6 +1,4 @@
-echo "# fiap" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/joaopedromag/fiap.git
-git push -u origin master
+nota1 = 10
+nota2 = 8
+media = ((nota1 + nota2) / 2)
+print ("Sua média é:", media)
