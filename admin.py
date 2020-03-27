@@ -3,7 +3,7 @@ acesso = str (input ("Digite seu nível de acesso: ")).upper()
 genero = str (input ("Digite o sexo (homem ou mulher): ")).upper()
 
 if acesso != "ADM" and acesso != "USR" and acesso != "GUEST".upper():
-    print ("Olá desconhecido")
+    print ("Olá desconhecido(a)")
 
 if acesso == "ADM" and genero == "homem".upper():
     print ("Olá administrador")
