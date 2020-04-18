@@ -1,0 +1,44 @@
+# Ferramenta foi disponível para todos os funcionários da empresa Contoso para verificar se seus e-mails estavam na lista de vazamento.
+# Empresa e E-mails fictícios.
+
+import colorama
+from colorama import Fore, Back, Style
+colorama.init()
+print (Fore.YELLOW + "--------------------------------------------------------------------")
+print (Fore.YELLOW + "Alguns funcionários da empresa Contoso tiveram seus e-mails vazados.")
+print (Fore.YELLOW + "                Verifique se seu e-mail foi vazado.                 ")
+print (Fore.YELLOW + "--------------------------------------------------------------------" + Style.RESET_ALL)
+vazamento = ["alberico@contoso.com.br", "felipemartins@contoso.com.br", "mariafp15@contoso.com.br", "felipegomes@contoso.com.br", "andregivotto@contoso.com.br", "lucianoph@contoso.com.br", "admin@contoso.com.br", "carlos1@contoso.com.br", "matheus300@contoso.com.br", "fiquei2horastentandoarrumarascores@contoso.com.br", "guilherme2@contoso.com.br", "lucasxpp@contoso.com.br", "marcossilva2@contoso.com.br", "marcelowph@contoso.com.br", "gabrielarroba@contoso.com.br", "paulasanches@contoso.com.br", "josesilvagomes@contoso.com.br", "carlosandrade@contoso.com.br", "felipefranco@contoso.com.br", "italygg@contoso.com.br","marcelassw@contoso.com.br", "emily777@contoso.com.br", "pedroaguiar2@contoso.com.br", "departamentojuridico@contoso.com.br", "xpp200@contoso.com.br","simone30@contoso.com.br", "eduardo20@contoso.com.br", "rafael3@contoso.com.br", "oscarlosos@contoso.com.br", "jamesschrumethi@contoso.com.br", "pedrita200@contoso.com.br", "joaopedromag@contoso.com.br","marcosinacio@contoso.com.br", "vinicius1333@contoso.com.br" ]
+count = 1
+while True:
+    tmp = input("Digite seu e-mail: ")
+
+    for x in vazamento:
+        if x == tmp:
+            print (Fore.RED + "Seu e-mail foi vazado" + Style.RESET_ALL)
+
+            tmp1 = input("Deseja alterar seu e-mail? (Sim ou Nao): ").upper()
+
+            while tmp1 != "SIM" and tmp1 != "NAO".upper():
+                print (Fore.GREEN + "Por favor digite apenas Sim ou Nao" + Style.RESET_ALL)
+                tmp1 = input("Deseja alterar seu e-mail? (Sim ou Nao): ").upper()
+                if count == 3:
+                    print (Fore.RED + "Reinicie o programa" + Style.RESET_ALL)
+                    quit()
+                else:
+                    count = count + 1
+
+            if tmp1 == "SIM".upper():
+                print (Fore.GREEN + "Entrem em contato com o e-mail de suporte para altera-lo -> suportecontoso@contoso.com.br" + Style.RESET_ALL)
+                exit()
+            elif tmp1 == "NAO".upper():
+                print (Fore.GREEN + "É recomendado que altere seu e-mail." + Style.RESET_ALL)
+                exit()    
+    else:
+        print (Fore.GREEN + "Seu e-mail não foi vazado" + Style.RESET_ALL )
+        tmp2 = input("Deseja fazer uma nova pesquisa? (Sim ou Nao): ").upper()
+        if tmp2 != "SIM" and tmp2 != "NAO".upper():
+            print (Fore.GREEN + "Digite apenas Sim ou Nao" + Style.RESET_ALL)
+        if tmp2 == "NAO".upper():
+            print (Fore.MAGENTA + "Obrigado!!!" + Style.RESET_ALL)
+            break
